@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_list_material_groups",
+  "info": {
+    "displayName": "Material Group",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Materials": {
+      "displayName": "Materials",
+      "type": "component",
+      "repeatable": true,
+      "component": "list.materials"
+    }
+  }
+}
