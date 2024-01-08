@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_list_materials",
+  "info": {
+    "displayName": "Materials",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "File": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
