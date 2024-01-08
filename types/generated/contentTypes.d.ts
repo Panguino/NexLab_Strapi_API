@@ -378,6 +378,11 @@ export interface ApiCourseCourse extends Schema.CollectionType {
     CourseID: Attribute.Integer;
     Description: Attribute.Blocks;
     MaterialGroup: Attribute.Component<'list.material-group', true>;
+    course_category: Attribute.Relation<
+      'api::course.course',
+      'manyToOne',
+      'api::course-category.course-category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -389,6 +394,41 @@ export interface ApiCourseCourse extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::course.course',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCourseCategoryCourseCategory extends Schema.CollectionType {
+  collectionName: 'course_categories';
+  info: {
+    singularName: 'course-category';
+    pluralName: 'course-categories';
+    displayName: 'Course Category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    courses: Attribute.Relation<
+      'api::course-category.course-category',
+      'oneToMany',
+      'api::course.course'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::course-category.course-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::course-category.course-category',
       'oneToOne',
       'admin::user'
     > &
@@ -722,6 +762,7 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::course.course': ApiCourseCourse;
+      'api::course-category.course-category': ApiCourseCategoryCourseCategory;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
