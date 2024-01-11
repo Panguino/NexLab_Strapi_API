@@ -11,11 +11,15 @@
       "type": "string"
     },
     "File": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "files"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "Link": {
+      "type": "string"
     }
   }
 }
