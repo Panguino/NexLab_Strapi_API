@@ -23,6 +23,7 @@ export interface ListMaterials extends Schema.Component {
   attributes: {
     Name: Attribute.String;
     File: Attribute.Media;
+    Link: Attribute.String;
   };
 }
 
