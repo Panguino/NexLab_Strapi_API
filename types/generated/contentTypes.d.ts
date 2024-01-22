@@ -751,6 +751,40 @@ export interface ApiCourseCategoryCourseCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiDegreeDegree extends Schema.CollectionType {
+  collectionName: 'degrees';
+  info: {
+    singularName: 'degree';
+    pluralName: 'degrees';
+    displayName: 'Degree';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Blocks;
+    Buttons: Attribute.Component<'list.buttons', true>;
+    Schools: Attribute.Component<'list.schools', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::degree.degree',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::degree.degree',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -769,6 +803,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::course.course': ApiCourseCourse;
       'api::course-category.course-category': ApiCourseCategoryCourseCategory;
+      'api::degree.degree': ApiDegreeDegree;
     }
   }
 }

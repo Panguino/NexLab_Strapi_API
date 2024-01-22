@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_list_school_links",
+  "info": {
+    "displayName": "SchoolLinks",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "School": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "string"
+    }
+  }
+}
