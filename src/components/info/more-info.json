@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_info_more_infos",
+  "info": {
+    "displayName": "MoreInfo",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "MoreInfoLink": {
+      "type": "string"
+    }
+  }
+}

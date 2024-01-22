@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_info_infos",
+  "info": {
+    "displayName": "Info",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "Details": {
+      "type": "text"
+    }
+  }
+}
