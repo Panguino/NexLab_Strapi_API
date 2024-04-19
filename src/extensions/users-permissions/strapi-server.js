@@ -15,7 +15,7 @@ module.exports = (plugin) => {
   };
   plugin.routes["content-api"].routes.push({
     method: "PUT",
-    path: "/users/me",
+    path: "/user/me",
     handler: "user.updateMe",
     config: {
       prefix: "",
