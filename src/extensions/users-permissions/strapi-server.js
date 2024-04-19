@@ -1,5 +1,3 @@
-const { config } = require("../../../../plugins/deploy-plugin/server");
-
 module.exports = (plugin) => {
   plugin.controllers.user.updateMe = async (ctx) => {
     if (!ctx.state.user || ctx.state.user.id) {
