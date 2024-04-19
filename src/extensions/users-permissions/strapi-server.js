@@ -1,6 +1,6 @@
 module.exports = (plugin) => {
   plugin.controllers.user.updateMe = async (ctx) => {
-    if (!ctx.state.user || ctx.state.user.id) {
+    if (!ctx.state.user) {
       return (ctx.response.status = 401);
     }
     await strapi
@@ -15,7 +15,7 @@ module.exports = (plugin) => {
   };
   plugin.routes["content-api"].routes.push({
     method: "PUT",
-    path: "/user/me",
+    path: "/users/me",
     handler: "user.updateMe",
     config: {
       prefix: "",
