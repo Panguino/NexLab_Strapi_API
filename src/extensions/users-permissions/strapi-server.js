@@ -3,6 +3,7 @@ module.exports = (plugin) => {
     if (!ctx.state.user) {
       return (ctx.response.status = 401);
     }
+    // Insert better body validation here
     await strapi
       .query("plugin::users-permissions.user")
       .update({
