@@ -1,8 +1,9 @@
 module.exports = (plugin) => {
   plugin.controllers.user.updateMe = async (ctx) => {
-    if (!ctx.state.user || ctx.state.user.id) {
+    if (!ctx.state.user) {
       return (ctx.response.status = 401);
     }
+    // Insert better body validation here
     await strapi
       .query("plugin::users-permissions.user")
       .update({
