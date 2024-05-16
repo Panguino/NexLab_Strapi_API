@@ -484,6 +484,7 @@ export interface ApiPagePage extends Schema.CollectionType {
   attributes: {
     Title: Attribute.String;
     SEO: Attribute.Component<'shared.seo'>;
+    path: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
