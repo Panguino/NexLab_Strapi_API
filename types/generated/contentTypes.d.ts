@@ -694,6 +694,9 @@ export interface ApiCampusCampus extends Schema.CollectionType {
     Latitude: Attribute.Float;
     Longitude: Attribute.Float;
     Color: Attribute.JSON;
+    Path: Attribute.String;
+    Keywords: Attribute.Text;
+    Description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
