@@ -38,10 +38,10 @@
       "component": "shared.seo"
     },
     "gridX": {
-      "type": "integer"
+      "type": "biginteger"
     },
     "gridY": {
-      "type": "integer"
+      "type": "biginteger"
     }
   }
 }

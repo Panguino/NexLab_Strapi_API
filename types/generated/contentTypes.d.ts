@@ -695,8 +695,8 @@ export interface ApiCampusCampus extends Schema.CollectionType {
     Longitude: Attribute.Float;
     Color: Attribute.JSON;
     SEO: Attribute.Component<'shared.seo'>;
-    gridX: Attribute.Integer;
-    gridY: Attribute.Integer;
+    gridX: Attribute.BigInteger;
+    gridY: Attribute.BigInteger;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
