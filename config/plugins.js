@@ -51,4 +51,17 @@ module.exports = ({ env }) => ({
   seo: {
     enabled: true,
   },
+  navigation: {
+    enabled: true,
+    config: {
+      contentTypes: ["api::page.page"],
+      contentTypesNameFields: {
+        "api::page.page": ["title"],
+      },
+      pathDefaultFields: {
+        "api::page.page": ["slug"],
+      },
+      allowedLevels: 4,
+    },
+  },
 });
