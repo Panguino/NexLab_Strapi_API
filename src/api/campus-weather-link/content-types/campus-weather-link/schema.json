@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campus_weather_links",
+  "info": {
+    "singularName": "campus-weather-link",
+    "pluralName": "campus-weather-links",
+    "displayName": "Campus Weather Links",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "URL": {
+      "type": "string"
+    }
+  }
+}
