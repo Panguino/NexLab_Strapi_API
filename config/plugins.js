@@ -26,6 +26,19 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  navigation: {
+    enabled: true,
+    config: {
+      contentTypes: ["api::page.page"],
+      contentTypesNameFields: {
+        "api::page.page": ["title"],
+      },
+      pathDefaultFields: {
+        "api::page.page": ["slug"],
+      },
+      allowedLevels: 4,
+    },
+  },
   graphql: {
     config: {
       endpoint: "/graphql",
@@ -50,18 +63,5 @@ module.exports = ({ env }) => ({
   },
   seo: {
     enabled: true,
-  },
-  navigation: {
-    enabled: true,
-    config: {
-      contentTypes: ["api::page.page"],
-      contentTypesNameFields: {
-        "api::page.page": ["title"],
-      },
-      pathDefaultFields: {
-        "api::page.page": ["slug"],
-      },
-      allowedLevels: 4,
-    },
   },
 });
