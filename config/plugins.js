@@ -37,6 +37,9 @@ module.exports = ({ env }) => ({
         "api::page.page": ["slug"],
       },
       allowedLevels: 4,
+      gql: {
+        navigationItemRelated: ["Page"],
+      },
     },
   },
   graphql: {
