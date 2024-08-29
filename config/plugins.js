@@ -26,6 +26,7 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  menus: {},
   navigation: {
     enabled: true,
     config: {
