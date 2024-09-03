@@ -27,22 +27,6 @@ module.exports = ({ env }) => ({
     },
   },
   menus: {},
-  navigation: {
-    enabled: true,
-    config: {
-      contentTypes: ["api::page.page"],
-      contentTypesNameFields: {
-        "api::page.page": ["title"],
-      },
-      pathDefaultFields: {
-        "api::page.page": ["slug"],
-      },
-      allowedLevels: 4,
-      gql: {
-        navigationItemRelated: ["Page"],
-      },
-    },
-  },
   graphql: {
     config: {
       endpoint: "/graphql",
