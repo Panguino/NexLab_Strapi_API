@@ -697,6 +697,7 @@ export interface ApiCampusCampus extends Schema.CollectionType {
     SEO: Attribute.Component<'shared.seo'>;
     gridX: Attribute.Integer;
     gridY: Attribute.Integer;
+    uniqueWeatherConditions: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

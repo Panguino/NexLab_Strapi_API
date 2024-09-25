@@ -42,6 +42,9 @@
     },
     "gridY": {
       "type": "integer"
+    },
+    "uniqueWeatherConditions": {
+      "type": "boolean"
     }
   }
 }
