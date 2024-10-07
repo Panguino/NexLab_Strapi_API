@@ -26,7 +26,6 @@
     "react-router-dom": "5.3.4",
     "strapi-plugin-meilisearch": "^0.11.1",
     "strapi-plugin-menus": "^1.6.1",
-    "strapi-plugin-tagsinput": "^1.0.6",
     "styled-components": "5.3.3"
   },
   "author": {

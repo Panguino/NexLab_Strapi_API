@@ -4,8 +4,7 @@
   "info": {
     "singularName": "faq",
     "pluralName": "faqs",
-    "displayName": "FAQ",
-    "description": ""
+    "displayName": "FAQ"
   },
   "options": {
     "draftAndPublish": true
@@ -17,10 +16,6 @@
     },
     "Answer": {
       "type": "blocks"
-    },
-    "tags": {
-      "type": "customField",
-      "customField": "plugin::tagsinput.tags"
     }
   }
 }
