@@ -52,24 +52,4 @@ module.exports = ({ env }) => ({
   seo: {
     enabled: true,
   },
-  backup: {
-    enabled: true,
-    config: {
-      cronSchedule: "0 9-17 * * *", // At minute 0 past every hour from 9 through 17
-      storageService: "aws-s3",
-      awsAccessKeyId: env("AWS_ACCESS_KEY_ID"),
-      awsSecretAccessKey: env("AWS_SECRET_ACCESS_KEY"),
-      awsRegion: env("AWS_REGION"),
-      awsS3Bucket: env("AWS_S3_BUCKET"),
-      databaseDriver: env("DATABASE_CLIENT"),
-      pgDumpExecutable: "/path/to/your/pg_dump/bin",
-      pgDumpOptions: ["--clean", "--if-exists"],
-      allowCleanup: true,
-      timeToKeepBackupsInSeconds: 172800, // 2 days
-      cleanupCronSchedule: "0 9 * * *", // Each day at 09:00 AM
-      errorHandler: (error, strapi) => {
-        console.log(error);
-      },
-    },
-  },
 });
