@@ -19,6 +19,13 @@
         "dark",
         "light"
       ]
+    },
+    "target": {
+      "type": "enumeration",
+      "enum": [
+        "_self",
+        "_blank"
+      ]
     }
   }
 }

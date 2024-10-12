@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_two_panel_icon_infos",
+  "info": {
+    "displayName": "Two Panel Icon Info",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "iconInfoPanel": {
+      "displayName": "Panel Icon Info",
+      "type": "component",
+      "repeatable": true,
+      "component": "list.panel-icon-info",
+      "max": 2,
+      "min": 2
+    }
+  }
+}

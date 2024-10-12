@@ -1026,6 +1026,14 @@ export interface ApiPagePage extends Schema.CollectionType {
     SEO: Attribute.Component<'shared.seo'>;
     path: Attribute.String;
     Image: Attribute.Media;
+    Blocks: Attribute.DynamicZone<
+      [
+        'blocks.page-heading',
+        'blocks.info-with-cloud-image',
+        'blocks.two-panel-icon-info',
+        'blocks.storm-chasing-schedule'
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

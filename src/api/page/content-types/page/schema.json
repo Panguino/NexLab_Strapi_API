@@ -24,11 +24,21 @@
       "type": "string"
     },
     "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "Blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.page-heading",
+        "blocks.info-with-cloud-image",
+        "blocks.two-panel-icon-info",
+        "blocks.storm-chasing-schedule"
+      ]
     }
   }
 }

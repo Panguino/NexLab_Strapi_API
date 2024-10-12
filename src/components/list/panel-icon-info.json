@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_list_panel_icon_infos",
+  "info": {
+    "displayName": "Panel Icon Info",
+    "icon": "grid",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "text"
+    },
+    "buttonLabel": {
+      "type": "string"
+    },
+    "buttonUrl": {
+      "type": "string"
+    },
+    "ButtonTarget": {
+      "type": "enumeration",
+      "enum": [
+        "_self",
+        "_blank"
+      ]
+    },
+    "backgroundImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

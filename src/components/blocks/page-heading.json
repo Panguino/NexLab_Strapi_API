@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_blocks_page_headings",
+  "info": {
+    "displayName": "Page Heading",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "Buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "list.buttons"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
