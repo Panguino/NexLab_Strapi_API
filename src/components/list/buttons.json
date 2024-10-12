@@ -16,9 +16,10 @@
     "Style": {
       "type": "enumeration",
       "enum": [
-        "dark",
-        "light"
-      ]
+        "solid",
+        "outline"
+      ],
+      "default": "solid"
     },
     "target": {
       "type": "enumeration",

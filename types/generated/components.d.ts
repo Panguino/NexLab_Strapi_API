@@ -70,7 +70,8 @@ export interface ListButtons extends Schema.Component {
   attributes: {
     Label: Attribute.String;
     Link: Attribute.String;
-    Style: Attribute.Enumeration<['dark', 'light']>;
+    Style: Attribute.Enumeration<['solid', 'outline']> &
+      Attribute.DefaultTo<'solid'>;
     target: Attribute.Enumeration<['_self', '_blank']>;
   };
 }
