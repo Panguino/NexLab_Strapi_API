@@ -10,13 +10,13 @@
     "heading": {
       "type": "string"
     },
-    "body": {
-      "type": "text"
-    },
     "Button": {
       "type": "component",
       "repeatable": false,
       "component": "list.buttons"
+    },
+    "body": {
+      "type": "blocks"
     }
   }
 }

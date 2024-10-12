@@ -40,8 +40,8 @@ export interface BlocksStormChasingSchedule extends Schema.Component {
   };
   attributes: {
     heading: Attribute.String;
-    body: Attribute.Text;
     Button: Attribute.Component<'list.buttons'>;
+    body: Attribute.Blocks;
   };
 }
 
