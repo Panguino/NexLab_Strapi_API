@@ -1064,7 +1064,9 @@ export interface ApiPagePage extends Schema.CollectionType {
         'blocks.page-heading',
         'blocks.info-with-cloud-image',
         'blocks.two-panel-icon-info',
-        'blocks.storm-chasing-schedule'
+        'blocks.storm-chasing-schedule',
+        'blocks.degree',
+        'blocks.rich-text'
       ]
     >;
     createdAt: Attribute.DateTime;

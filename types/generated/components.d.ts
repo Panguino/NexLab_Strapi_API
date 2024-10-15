@@ -1,5 +1,20 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface BlocksDegree extends Schema.Component {
+  collectionName: 'components_blocks_degrees';
+  info: {
+    displayName: 'Degree';
+    icon: 'layer';
+  };
+  attributes: {
+    degrees: Attribute.Relation<
+      'blocks.degree',
+      'oneToMany',
+      'api::degree.degree'
+    >;
+  };
+}
+
 export interface BlocksInfoWithCloudImage extends Schema.Component {
   collectionName: 'components_blocks_info_with_cloud_images';
   info: {
@@ -31,6 +46,17 @@ export interface BlocksPageHeading extends Schema.Component {
   };
 }
 
+export interface BlocksRichText extends Schema.Component {
+  collectionName: 'components_blocks_rich_texts';
+  info: {
+    displayName: 'RichText';
+    icon: 'file';
+  };
+  attributes: {
+    body: Attribute.Blocks;
+  };
+}
+
 export interface BlocksStormChasingSchedule extends Schema.Component {
   collectionName: 'components_blocks_storm_chasing_schedules';
   info: {
@@ -42,6 +68,7 @@ export interface BlocksStormChasingSchedule extends Schema.Component {
     heading: Attribute.String;
     Button: Attribute.Component<'list.buttons'>;
     body: Attribute.Blocks;
+    Trips: Attribute.Component<'list.trips', true>;
   };
 }
 
@@ -172,6 +199,21 @@ export interface ListSchools extends Schema.Component {
   };
 }
 
+export interface ListTrips extends Schema.Component {
+  collectionName: 'components_list_trips';
+  info: {
+    displayName: 'Trips';
+    icon: 'calendar';
+  };
+  attributes: {
+    startDate: Attribute.Date;
+    endDate: Attribute.Date;
+    Status: Attribute.String;
+    Instructor: Attribute.String;
+    Assistant: Attribute.String;
+  };
+}
+
 export interface SharedMetaSocial extends Schema.Component {
   collectionName: 'components_shared_meta_socials';
   info: {
@@ -226,8 +268,10 @@ export interface SharedSeo extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'blocks.degree': BlocksDegree;
       'blocks.info-with-cloud-image': BlocksInfoWithCloudImage;
       'blocks.page-heading': BlocksPageHeading;
+      'blocks.rich-text': BlocksRichText;
       'blocks.storm-chasing-schedule': BlocksStormChasingSchedule;
       'blocks.two-panel-icon-info': BlocksTwoPanelIconInfo;
       'list.buttons': ListButtons;
@@ -238,6 +282,7 @@ declare module '@strapi/types' {
       'list.panel-icon-info': ListPanelIconInfo;
       'list.school-links': ListSchoolLinks;
       'list.schools': ListSchools;
+      'list.trips': ListTrips;
       'shared.meta-social': SharedMetaSocial;
       'shared.seo': SharedSeo;
     }

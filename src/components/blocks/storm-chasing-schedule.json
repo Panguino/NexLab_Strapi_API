@@ -17,6 +17,12 @@
     },
     "body": {
       "type": "blocks"
+    },
+    "Trips": {
+      "displayName": "Trips",
+      "type": "component",
+      "repeatable": true,
+      "component": "list.trips"
     }
   }
 }

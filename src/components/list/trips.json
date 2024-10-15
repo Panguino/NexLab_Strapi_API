@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_list_trips",
+  "info": {
+    "displayName": "Trips",
+    "icon": "calendar"
+  },
+  "options": {},
+  "attributes": {
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "Status": {
+      "type": "string"
+    },
+    "Instructor": {
+      "type": "string"
+    },
+    "Assistant": {
+      "type": "string"
+    }
+  }
+}
