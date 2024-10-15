@@ -1010,6 +1010,39 @@ export interface ApiFaqOverviewFaqOverview extends Schema.SingleType {
   };
 }
 
+export interface ApiFooterFooter extends Schema.SingleType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'Footer';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    Group: Attribute.Component<'list.group', true> &
+      Attribute.SetMinMax<{
+        min: 4;
+        max: 4;
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Schema.CollectionType {
   collectionName: 'pages';
   info: {
@@ -1106,6 +1139,7 @@ declare module '@strapi/types' {
       'api::degree.degree': ApiDegreeDegree;
       'api::faq.faq': ApiFaqFaq;
       'api::faq-overview.faq-overview': ApiFaqOverviewFaqOverview;
+      'api::footer.footer': ApiFooterFooter;
       'api::page.page': ApiPagePage;
       'api::storm-chasing-materials-page.storm-chasing-materials-page': ApiStormChasingMaterialsPageStormChasingMaterialsPage;
     }

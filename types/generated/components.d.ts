@@ -76,6 +76,31 @@ export interface ListButtons extends Schema.Component {
   };
 }
 
+export interface ListFooterLinks extends Schema.Component {
+  collectionName: 'components_list_footer_links';
+  info: {
+    displayName: 'Footer Links';
+    icon: 'bulletList';
+  };
+  attributes: {
+    text: Attribute.String;
+    url: Attribute.String;
+    target: Attribute.String;
+  };
+}
+
+export interface ListGroup extends Schema.Component {
+  collectionName: 'components_list_groups';
+  info: {
+    displayName: 'Group';
+    icon: 'bulletList';
+  };
+  attributes: {
+    Heading: Attribute.String;
+    Links: Attribute.Component<'list.footer-links', true>;
+  };
+}
+
 export interface ListMaterialGroup extends Schema.Component {
   collectionName: 'components_list_material_groups';
   info: {
@@ -206,6 +231,8 @@ declare module '@strapi/types' {
       'blocks.storm-chasing-schedule': BlocksStormChasingSchedule;
       'blocks.two-panel-icon-info': BlocksTwoPanelIconInfo;
       'list.buttons': ListButtons;
+      'list.footer-links': ListFooterLinks;
+      'list.group': ListGroup;
       'list.material-group': ListMaterialGroup;
       'list.materials': ListMaterials;
       'list.panel-icon-info': ListPanelIconInfo;

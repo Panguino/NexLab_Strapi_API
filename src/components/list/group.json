@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_list_groups",
+  "info": {
+    "displayName": "Group",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "Links": {
+      "displayName": "Footer Links",
+      "type": "component",
+      "repeatable": true,
+      "component": "list.footer-links"
+    }
+  }
+}

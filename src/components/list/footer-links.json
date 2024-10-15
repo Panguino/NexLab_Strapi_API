@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_list_footer_links",
+  "info": {
+    "displayName": "Footer Links",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string"
+    }
+  }
+}
