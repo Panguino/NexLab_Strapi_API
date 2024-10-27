@@ -29,22 +29,21 @@
     "Longitude": {
       "type": "float"
     },
-    "Color": {
-      "type": "json"
-    },
     "SEO": {
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
     },
-    "gridX": {
-      "type": "biginteger"
-    },
-    "gridY": {
-      "type": "biginteger"
-    },
     "uniqueWeatherConditions": {
       "type": "boolean"
+    },
+    "banner": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }
