@@ -26,6 +26,7 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  menus: {},
   graphql: {
     config: {
       endpoint: "/graphql",

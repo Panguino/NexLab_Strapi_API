@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_degrees",
+  "info": {
+    "displayName": "Degree",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "degrees": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::degree.degree"
+    }
+  }
+}

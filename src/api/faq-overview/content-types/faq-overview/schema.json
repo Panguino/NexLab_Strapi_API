@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "faq_overviews",
+  "info": {
+    "singularName": "faq-overview",
+    "pluralName": "faq-overviews",
+    "displayName": "FAQ Overview"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "blocks"
+    }
+  }
+}

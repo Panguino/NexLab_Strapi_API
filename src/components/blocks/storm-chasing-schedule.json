@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_blocks_storm_chasing_schedules",
+  "info": {
+    "displayName": "Storm Chasing Schedule",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "list.buttons"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "Trips": {
+      "displayName": "Trips",
+      "type": "component",
+      "repeatable": true,
+      "component": "list.trips"
+    }
+  }
+}

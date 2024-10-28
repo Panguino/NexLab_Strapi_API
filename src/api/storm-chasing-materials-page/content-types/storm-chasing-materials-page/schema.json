@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "storm_chasing_materials_pages",
+  "info": {
+    "singularName": "storm-chasing-materials-page",
+    "pluralName": "storm-chasing-materials-pages",
+    "displayName": "Storm Chasing Materials Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "leftGroupMaterials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "list.material-group"
+    },
+    "leftGroupTitle": {
+      "type": "string"
+    },
+    "rightGroupTitle": {
+      "type": "string"
+    },
+    "rightGroupMaterials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "list.material-group"
+    }
+  }
+}

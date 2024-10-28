@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_blocks_info_with_cloud_images",
+  "info": {
+    "displayName": "Info with Cloud Image",
+    "icon": "cloud",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "smallHeading": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "Buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "list.buttons"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

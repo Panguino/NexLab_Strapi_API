@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Footer"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Group": {
+      "displayName": "Group",
+      "type": "component",
+      "repeatable": true,
+      "component": "list.group",
+      "max": 4,
+      "min": 4
+    }
+  }
+}
