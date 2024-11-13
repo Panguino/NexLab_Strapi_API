@@ -25,11 +25,10 @@
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
     "strapi-plugin-meilisearch": "^0.11.1",
-    "strapi-plugin-menus": "^1.6.1",
     "styled-components": "5.3.3"
   },
   "author": {
-    "name": "Radoslaw Wojtowicz"
+    "name": "NexLab Weather"
   },
   "strapi": {
     "uuid": "62d9351c-bc36-495f-9ce3-1778dd7da30b"

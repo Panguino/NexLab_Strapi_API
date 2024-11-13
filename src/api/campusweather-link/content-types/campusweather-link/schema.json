@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "campusweather_links",
+  "info": {
+    "singularName": "campusweather-link",
+    "pluralName": "campusweather-links",
+    "displayName": "Campus Weather Links"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "LinkGroup": {
+      "type": "component",
+      "repeatable": true,
+      "component": "list.group",
+      "min": 1
+    }
+  }
+}
