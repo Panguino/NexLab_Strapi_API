@@ -714,39 +714,6 @@ export interface ApiCampusCampus extends Schema.CollectionType {
   };
 }
 
-export interface ApiCampusWeatherLinkCampusWeatherLink
-  extends Schema.CollectionType {
-  collectionName: 'campus_weather_links';
-  info: {
-    singularName: 'campus-weather-link';
-    pluralName: 'campus-weather-links';
-    displayName: 'Campus Weather Links';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Name: Attribute.String;
-    URL: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::campus-weather-link.campus-weather-link',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::campus-weather-link.campus-weather-link',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiCampusweatherLinkCampusweatherLink
   extends Schema.SingleType {
   collectionName: 'campusweather_links';
@@ -1066,7 +1033,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::campus.campus': ApiCampusCampus;
-      'api::campus-weather-link.campus-weather-link': ApiCampusWeatherLinkCampusWeatherLink;
       'api::campusweather-link.campusweather-link': ApiCampusweatherLinkCampusweatherLink;
       'api::course.course': ApiCourseCourse;
       'api::course-category.course-category': ApiCourseCategoryCourseCategory;
