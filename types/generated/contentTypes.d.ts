@@ -916,6 +916,7 @@ export interface ApiFooterFooter extends Schema.SingleType {
     singularName: 'footer';
     pluralName: 'footers';
     displayName: 'Footer';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -926,6 +927,7 @@ export interface ApiFooterFooter extends Schema.SingleType {
         min: 4;
         max: 4;
       }>;
+    Logo: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -969,6 +971,9 @@ export interface ApiPagePage extends Schema.CollectionType {
         'blocks.rich-text'
       ]
     >;
+    productInfo: Attribute.Blocks;
+    ProductImage: Attribute.Media;
+    productDescription: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
