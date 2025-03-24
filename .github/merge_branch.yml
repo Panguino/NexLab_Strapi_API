@@ -1,0 +1,38 @@
+name: Merge Branch
+
+on:
+  pull_request:
+    types:
+      - closed  # This event triggers when a pull request is closed (merged or just closed without merging)
+    branches:
+      - 'development'  # Only triggers for PRs merged into 'development'
+
+jobs:
+  delete-neon-branch:
+    name: Delete Neon Database Branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Check if PR was merged and get the merged branch name
+        id: get-merged-branch
+        run: |
+          if [[ "${{ github.event.pull_request.merged }}" == "true" ]]; then
+            PR_BRANCH="${{ github.event.pull_request.head.ref }}"
+            echo "Merged branch: $PR_BRANCH"
+            echo "MERGED_BRANCH=$PR_BRANCH" >> $GITHUB_ENV
+          else
+            echo "No merged pull request detected. Exiting..."
+            exit 0
+          fi
+
+      - name: Delete Database Branch
+        uses: neondatabase/delete-branch-action@v3
+        with:
+          project_id: ${{ vars.NEON_PROJECT_ID }}
+          branch: ${{ env.MERGED_BRANCH }}  # Delete the merged branch, not 'development'
+          api_key: ${{ secrets.NEON_API_KEY }}
+
+      - name: Confirm deletion
+        run: echo "The database branch associated with '${{ env.MERGED_BRANCH }}' has been deleted."
