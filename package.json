@@ -7,7 +7,9 @@
     "dev": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "neon-create": "node scripts/neonCreateBranch.js",
+    "neon-use": "node scripts/neonUseBranch.js"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "4.15.5",
