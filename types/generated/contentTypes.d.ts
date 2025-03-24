@@ -482,104 +482,6 @@ export interface PluginUploadFolder extends Schema.CollectionType {
   };
 }
 
-export interface PluginMenusMenu extends Schema.CollectionType {
-  collectionName: 'menus';
-  info: {
-    name: 'Menu';
-    displayName: 'Menu';
-    singularName: 'menu';
-    pluralName: 'menus';
-    tableName: 'menus';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    slug: Attribute.UID<'plugin::menus.menu', 'title'> & Attribute.Required;
-    items: Attribute.Relation<
-      'plugin::menus.menu',
-      'oneToMany',
-      'plugin::menus.menu-item'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'plugin::menus.menu',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'plugin::menus.menu',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface PluginMenusMenuItem extends Schema.CollectionType {
-  collectionName: 'menu_items';
-  info: {
-    name: 'MenuItem';
-    displayName: 'Menu Item';
-    singularName: 'menu-item';
-    pluralName: 'menu-items';
-    tableName: 'menu_items';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    order: Attribute.Integer;
-    title: Attribute.String & Attribute.Required;
-    url: Attribute.String;
-    target: Attribute.Enumeration<['_blank', '_parent', '_self', '_top']>;
-    root_menu: Attribute.Relation<
-      'plugin::menus.menu-item',
-      'manyToOne',
-      'plugin::menus.menu'
-    > &
-      Attribute.Required;
-    parent: Attribute.Relation<
-      'plugin::menus.menu-item',
-      'oneToOne',
-      'plugin::menus.menu-item'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'plugin::menus.menu-item',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'plugin::menus.menu-item',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginI18NLocale extends Schema.CollectionType {
   collectionName: 'i18n_locale';
   info: {
@@ -791,11 +693,9 @@ export interface ApiCampusCampus extends Schema.CollectionType {
     Logo: Attribute.Media;
     Latitude: Attribute.Float;
     Longitude: Attribute.Float;
-    Color: Attribute.JSON;
     SEO: Attribute.Component<'shared.seo'>;
-    gridX: Attribute.BigInteger;
-    gridY: Attribute.BigInteger;
     uniqueWeatherConditions: Attribute.Boolean;
+    banner: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -814,32 +714,32 @@ export interface ApiCampusCampus extends Schema.CollectionType {
   };
 }
 
-export interface ApiCampusWeatherLinkCampusWeatherLink
-  extends Schema.CollectionType {
-  collectionName: 'campus_weather_links';
+export interface ApiCampusweatherLinkCampusweatherLink
+  extends Schema.SingleType {
+  collectionName: 'campusweather_links';
   info: {
-    singularName: 'campus-weather-link';
-    pluralName: 'campus-weather-links';
+    singularName: 'campusweather-link';
+    pluralName: 'campusweather-links';
     displayName: 'Campus Weather Links';
-    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
-    Name: Attribute.String;
-    URL: Attribute.String;
+    LinkGroup: Attribute.Component<'list.group', true> &
+      Attribute.SetMinMax<{
+        min: 1;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::campus-weather-link.campus-weather-link',
+      'api::campusweather-link.campusweather-link',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::campus-weather-link.campus-weather-link',
+      'api::campusweather-link.campusweather-link',
       'oneToOne',
       'admin::user'
     > &
@@ -1016,6 +916,7 @@ export interface ApiFooterFooter extends Schema.SingleType {
     singularName: 'footer';
     pluralName: 'footers';
     displayName: 'Footer';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -1026,6 +927,7 @@ export interface ApiFooterFooter extends Schema.SingleType {
         min: 4;
         max: 4;
       }>;
+    Logo: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1069,6 +971,9 @@ export interface ApiPagePage extends Schema.CollectionType {
         'blocks.rich-text'
       ]
     >;
+    productInfo: Attribute.Blocks;
+    ProductImage: Attribute.Media;
+    productDescription: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1128,14 +1033,12 @@ declare module '@strapi/types' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
-      'plugin::menus.menu': PluginMenusMenu;
-      'plugin::menus.menu-item': PluginMenusMenuItem;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::campus.campus': ApiCampusCampus;
-      'api::campus-weather-link.campus-weather-link': ApiCampusWeatherLinkCampusWeatherLink;
+      'api::campusweather-link.campusweather-link': ApiCampusweatherLinkCampusweatherLink;
       'api::course.course': ApiCourseCourse;
       'api::course-category.course-category': ApiCourseCategoryCourseCategory;
       'api::degree.degree': ApiDegreeDegree;

@@ -41,6 +41,19 @@
         "blocks.degree",
         "blocks.rich-text"
       ]
+    },
+    "productInfo": {
+      "type": "blocks"
+    },
+    "ProductImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "productDescription": {
+      "type": "blocks"
     }
   }
 }
