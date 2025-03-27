@@ -7,7 +7,9 @@
     "dev": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "neon-create": "node scripts/neonCreateBranch.js",
+    "neon-use": "node scripts/neonUseBranch.js"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "4.15.5",
@@ -24,6 +26,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
+    "strapi-plugin-import-export-entries": "^1.23.1",
     "strapi-plugin-meilisearch": "^0.11.1",
     "styled-components": "5.3.3"
   },
