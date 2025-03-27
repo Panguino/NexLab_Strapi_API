@@ -39,19 +39,11 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  "deploy-plugin": {
-    enabled: env("DEPLOYMENT_ENABLED"),
-    resolve: "./src/plugins/deploy-plugin",
-    config: {
-      post_url: env("DEPLOYMENT_URL"),
-      button_text: env("DEPLOYMENT_BUTTON_TEXT"),
-      result_text: env("DEPLOYMENT_RESULT_TEXT"),
-    },
-  },
   seo: {
     enabled: true,
   },
   'import-export-entries': {
     enabled: true,
+    config: {},
   },
 });
