@@ -9,7 +9,8 @@
     "build": "strapi build",
     "strapi": "strapi",
     "neon-create": "node scripts/neonCreateBranch.js",
-    "neon-use": "node scripts/neonUseBranch.js"
+    "neon-use": "node scripts/neonUseBranch.js",
+    "kill": "npx kill-port 3000"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "4.15.5",
