@@ -747,6 +747,36 @@ export interface ApiCampusweatherLinkCampusweatherLink
   };
 }
 
+export interface ApiChasingGalleryItemChasingGalleryItem
+  extends Schema.CollectionType {
+  collectionName: 'chasing_gallery_items';
+  info: {
+    singularName: 'chasing-gallery-item';
+    pluralName: 'chasing-gallery-items';
+    displayName: 'Chasing Gallery Item';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    Name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::chasing-gallery-item.chasing-gallery-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::chasing-gallery-item.chasing-gallery-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCourseCourse extends Schema.CollectionType {
   collectionName: 'courses';
   info: {
@@ -1039,6 +1069,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::campus.campus': ApiCampusCampus;
       'api::campusweather-link.campusweather-link': ApiCampusweatherLinkCampusweatherLink;
+      'api::chasing-gallery-item.chasing-gallery-item': ApiChasingGalleryItemChasingGalleryItem;
       'api::course.course': ApiCourseCourse;
       'api::course-category.course-category': ApiCourseCategoryCourseCategory;
       'api::degree.degree': ApiDegreeDegree;

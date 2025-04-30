@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chasing_gallery_items",
+  "info": {
+    "singularName": "chasing-gallery-item",
+    "pluralName": "chasing-gallery-items",
+    "displayName": "Chasing Gallery Item"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    }
+  }
+}
