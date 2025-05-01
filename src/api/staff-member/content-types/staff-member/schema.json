@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "staff_members",
+  "info": {
+    "singularName": "staff-member",
+    "pluralName": "staff-members",
+    "displayName": "Staff Member",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "Position": {
+      "type": "string"
+    },
+    "ShortBio": {
+      "type": "text"
+    }
+  }
+}

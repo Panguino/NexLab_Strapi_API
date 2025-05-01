@@ -11,6 +11,17 @@ export interface BlocksDegree extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksGallery extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_galleries';
+  info: {
+    displayName: 'Gallery';
+    icon: 'apps';
+  };
+  attributes: {
+    Name: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksInfoWithCloudImage extends Struct.ComponentSchema {
   collectionName: 'components_blocks_info_with_cloud_images';
   info: {
@@ -53,6 +64,17 @@ export interface BlocksRichText extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksStaff extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_staff';
+  info: {
+    displayName: 'Staff';
+    icon: 'apps';
+  };
+  attributes: {
+    Name: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksStormChasingSchedule extends Struct.ComponentSchema {
   collectionName: 'components_blocks_storm_chasing_schedules';
   info: {
@@ -83,6 +105,17 @@ export interface BlocksTwoPanelIconInfo extends Struct.ComponentSchema {
         },
         number
       >;
+  };
+}
+
+export interface BlocksVideo extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_videos';
+  info: {
+    displayName: 'Video';
+    icon: 'television';
+  };
+  attributes: {
+    Name: Schema.Attribute.String;
   };
 }
 
@@ -268,11 +301,14 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'blocks.degree': BlocksDegree;
+      'blocks.gallery': BlocksGallery;
       'blocks.info-with-cloud-image': BlocksInfoWithCloudImage;
       'blocks.page-heading': BlocksPageHeading;
       'blocks.rich-text': BlocksRichText;
+      'blocks.staff': BlocksStaff;
       'blocks.storm-chasing-schedule': BlocksStormChasingSchedule;
       'blocks.two-panel-icon-info': BlocksTwoPanelIconInfo;
+      'blocks.video': BlocksVideo;
       'list.buttons': ListButtons;
       'list.footer-links': ListFooterLinks;
       'list.group': ListGroup;

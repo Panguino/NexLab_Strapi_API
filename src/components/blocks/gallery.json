@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_galleries",
+  "info": {
+    "displayName": "Gallery",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    }
+  }
+}

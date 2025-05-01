@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_staff",
+  "info": {
+    "displayName": "Staff",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    }
+  }
+}

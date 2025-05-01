@@ -452,13 +452,62 @@ export interface ApiChasingGalleryItemChasingGalleryItem
     draftAndPublish: false;
   };
   attributes: {
+    chasing_gallery_tags: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::chasing-gallery-tag.chasing-gallery-tag'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Date: Schema.Attribute.Date;
+    description: Schema.Attribute.Text;
+    Image: Schema.Attribute.Media<'files' | 'images'> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::chasing-gallery-item.chasing-gallery-item'
+    > &
+      Schema.Attribute.Private;
+    location: Schema.Attribute.JSON &
+      Schema.Attribute.CustomField<
+        'plugin::strapi-location-picker.location-picker',
+        {
+          info: false;
+        }
+      >;
+    Name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiChasingGalleryTagChasingGalleryTag
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'chasing_gallery_tags';
+  info: {
+    description: '';
+    displayName: 'Chasing Gallery Tag';
+    pluralName: 'chasing-gallery-tags';
+    singularName: 'chasing-gallery-tag';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    chasing_gallery_items: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::chasing-gallery-item.chasing-gallery-item'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::chasing-gallery-item.chasing-gallery-item'
+      'api::chasing-gallery-tag.chasing-gallery-tag'
     > &
       Schema.Attribute.Private;
     Name: Schema.Attribute.String;
@@ -681,6 +730,9 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.storm-chasing-schedule',
         'blocks.degree',
         'blocks.rich-text',
+        'blocks.video',
+        'blocks.staff',
+        'blocks.gallery',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -697,6 +749,38 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
     Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStaffMemberStaffMember extends Struct.CollectionTypeSchema {
+  collectionName: 'staff_members';
+  info: {
+    description: '';
+    displayName: 'Staff Member';
+    pluralName: 'staff-members';
+    singularName: 'staff-member';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::staff-member.staff-member'
+    > &
+      Schema.Attribute.Private;
+    Name: Schema.Attribute.String;
+    Photo: Schema.Attribute.Media<'images' | 'files'>;
+    Position: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    ShortBio: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1253,6 +1337,7 @@ declare module '@strapi/strapi' {
       'api::campus.campus': ApiCampusCampus;
       'api::campusweather-link.campusweather-link': ApiCampusweatherLinkCampusweatherLink;
       'api::chasing-gallery-item.chasing-gallery-item': ApiChasingGalleryItemChasingGalleryItem;
+      'api::chasing-gallery-tag.chasing-gallery-tag': ApiChasingGalleryTagChasingGalleryTag;
       'api::course-category.course-category': ApiCourseCategoryCourseCategory;
       'api::course.course': ApiCourseCourse;
       'api::degree.degree': ApiDegreeDegree;
@@ -1260,6 +1345,7 @@ declare module '@strapi/strapi' {
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::page.page': ApiPagePage;
+      'api::staff-member.staff-member': ApiStaffMemberStaffMember;
       'api::storm-chasing-materials-page.storm-chasing-materials-page': ApiStormChasingMaterialsPageStormChasingMaterialsPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
