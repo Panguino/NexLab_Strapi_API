@@ -42,6 +42,9 @@
       "relation": "manyToMany",
       "target": "api::chasing-gallery-tag.chasing-gallery-tag",
       "inversedBy": "chasing_gallery_items"
+    },
+    "Author": {
+      "type": "string"
     }
   }
 }

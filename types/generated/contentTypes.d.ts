@@ -452,6 +452,7 @@ export interface ApiChasingGalleryItemChasingGalleryItem
     draftAndPublish: false;
   };
   attributes: {
+    Author: Schema.Attribute.String;
     chasing_gallery_tags: Schema.Attribute.Relation<
       'manyToMany',
       'api::chasing-gallery-tag.chasing-gallery-tag'
