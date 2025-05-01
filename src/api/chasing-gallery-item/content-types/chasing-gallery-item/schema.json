@@ -4,7 +4,8 @@
   "info": {
     "singularName": "chasing-gallery-item",
     "pluralName": "chasing-gallery-items",
-    "displayName": "Chasing Gallery Item"
+    "displayName": "Chasing Gallery Item",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
