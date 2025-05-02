@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chasing_gallery_tags",
+  "info": {
+    "singularName": "chasing-gallery-tag",
+    "pluralName": "chasing-gallery-tags",
+    "displayName": "Chasing Gallery Tag",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "chasing_gallery_items": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::chasing-gallery-item.chasing-gallery-item",
+      "mappedBy": "chasing_gallery_tags"
+    }
+  }
+}
