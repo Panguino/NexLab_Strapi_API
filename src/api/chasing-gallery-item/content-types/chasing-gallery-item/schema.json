@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chasing_gallery_items",
+  "info": {
+    "singularName": "chasing-gallery-item",
+    "pluralName": "chasing-gallery-items",
+    "displayName": "Chasing Gallery Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "text"
+    },
+    "location": {
+      "type": "customField",
+      "options": {
+        "info": false
+      },
+      "customField": "plugin::strapi-location-picker.location-picker"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "chasing_gallery_tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::chasing-gallery-tag.chasing-gallery-tag",
+      "inversedBy": "chasing_gallery_items"
+    },
+    "Author": {
+      "type": "string"
+    }
+  }
+}

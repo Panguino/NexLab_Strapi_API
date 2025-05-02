@@ -39,18 +39,22 @@
         "blocks.two-panel-icon-info",
         "blocks.storm-chasing-schedule",
         "blocks.degree",
-        "blocks.rich-text"
+        "blocks.rich-text",
+        "blocks.video",
+        "blocks.staff",
+        "blocks.gallery"
       ]
     },
     "productInfo": {
       "type": "blocks"
     },
     "ProductImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "productDescription": {
       "type": "blocks"
