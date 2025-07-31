@@ -1305,6 +1305,7 @@ export interface PluginUsersPermissionsUser
     donationTier: Schema.Attribute.Enumeration<
       ['Standard', 'Advanced', 'Premium', 'Sponsor']
     >;
+    donationUpdatedAt: Schema.Attribute.DateTime;
     email: Schema.Attribute.Email &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{

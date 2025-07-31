@@ -110,6 +110,9 @@
     },
     "sponsorStatus": {
       "type": "boolean"
+    },
+    "donationUpdatedAt": {
+      "type": "datetime"
     }
   }
 }
