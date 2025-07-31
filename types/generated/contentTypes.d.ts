@@ -1293,7 +1293,8 @@ export interface PluginUsersPermissionsUser
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    DiscordConnectedAt: Schema.Attribute.DateTime;
+    discordAvatar: Schema.Attribute.String;
+    discordConnectedAt: Schema.Attribute.DateTime;
     discordId: Schema.Attribute.String;
     discordUsername: Schema.Attribute.String;
     email: Schema.Attribute.Email &
