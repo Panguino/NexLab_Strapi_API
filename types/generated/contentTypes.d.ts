@@ -1297,6 +1297,14 @@ export interface PluginUsersPermissionsUser
     discordConnectedAt: Schema.Attribute.DateTime;
     discordId: Schema.Attribute.String;
     discordUsername: Schema.Attribute.String;
+    donationAmount: Schema.Attribute.Integer;
+    donationFrequency: Schema.Attribute.Enumeration<['monthly', 'lifetime']>;
+    donationStatus: Schema.Attribute.Enumeration<
+      ['active', 'cancelled', 'expired']
+    >;
+    donationTier: Schema.Attribute.Enumeration<
+      ['Standard', 'Advanced', 'Premium', 'Sponsor']
+    >;
     email: Schema.Attribute.Email &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -1320,6 +1328,7 @@ export interface PluginUsersPermissionsUser
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    sponsorStatus: Schema.Attribute.Boolean;
     TestInfo: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

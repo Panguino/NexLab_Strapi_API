@@ -80,6 +80,36 @@
     },
     "discordAvatar": {
       "type": "string"
+    },
+    "donationTier": {
+      "type": "enumeration",
+      "enum": [
+        "Standard",
+        "Advanced",
+        "Premium",
+        "Sponsor"
+      ]
+    },
+    "donationAmount": {
+      "type": "integer"
+    },
+    "donationFrequency": {
+      "type": "enumeration",
+      "enum": [
+        "monthly",
+        "lifetime"
+      ]
+    },
+    "donationStatus": {
+      "type": "enumeration",
+      "enum": [
+        "active",
+        "cancelled",
+        "expired"
+      ]
+    },
+    "sponsorStatus": {
+      "type": "boolean"
     }
   }
 }
