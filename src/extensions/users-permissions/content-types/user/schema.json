@@ -84,6 +84,7 @@
     "donationTier": {
       "type": "enumeration",
       "enum": [
+        "None",
         "Standard",
         "Advanced",
         "Premium",
@@ -96,6 +97,7 @@
     "donationFrequency": {
       "type": "enumeration",
       "enum": [
+        "n/a",
         "monthly",
         "lifetime"
       ]
@@ -103,6 +105,7 @@
     "donationStatus": {
       "type": "enumeration",
       "enum": [
+        "inactive",
         "active",
         "cancelled",
         "expired"
