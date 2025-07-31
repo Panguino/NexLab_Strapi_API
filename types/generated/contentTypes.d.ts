@@ -1298,12 +1298,14 @@ export interface PluginUsersPermissionsUser
     discordId: Schema.Attribute.String;
     discordUsername: Schema.Attribute.String;
     donationAmount: Schema.Attribute.Integer;
-    donationFrequency: Schema.Attribute.Enumeration<['monthly', 'lifetime']>;
+    donationFrequency: Schema.Attribute.Enumeration<
+      ['n/a', 'monthly', 'lifetime']
+    >;
     donationStatus: Schema.Attribute.Enumeration<
-      ['active', 'cancelled', 'expired']
+      ['inactive', 'active', 'cancelled', 'expired']
     >;
     donationTier: Schema.Attribute.Enumeration<
-      ['Standard', 'Advanced', 'Premium', 'Sponsor']
+      ['None', 'Standard', 'Advanced', 'Premium', 'Sponsor']
     >;
     donationUpdatedAt: Schema.Attribute.DateTime;
     email: Schema.Attribute.Email &
