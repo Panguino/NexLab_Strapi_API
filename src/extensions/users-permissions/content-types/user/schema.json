@@ -11,6 +11,7 @@
   "options": {
     "draftAndPublish": false
   },
+  "pluginOptions": {},
   "attributes": {
     "username": {
       "type": "string",
@@ -67,6 +68,15 @@
     },
     "TestInfo": {
       "type": "string"
+    },
+    "discordId": {
+      "type": "string"
+    },
+    "discordUsername": {
+      "type": "string"
+    },
+    "DiscordConnectedAt": {
+      "type": "datetime"
     }
   }
 }
