@@ -830,6 +830,37 @@ export interface ApiStormChasingMaterialsPageStormChasingMaterialsPage
   };
 }
 
+export interface ApiWeatherDataProductWeatherDataProduct
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'weather_data_products';
+  info: {
+    displayName: 'Weather Data Product';
+    pluralName: 'weather-data-products';
+    singularName: 'weather-data-product';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Blocks;
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::weather-data-product.weather-data-product'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1368,6 +1399,7 @@ declare module '@strapi/strapi' {
       'api::page.page': ApiPagePage;
       'api::staff-member.staff-member': ApiStaffMemberStaffMember;
       'api::storm-chasing-materials-page.storm-chasing-materials-page': ApiStormChasingMaterialsPageStormChasingMaterialsPage;
+      'api::weather-data-product.weather-data-product': ApiWeatherDataProductWeatherDataProduct;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

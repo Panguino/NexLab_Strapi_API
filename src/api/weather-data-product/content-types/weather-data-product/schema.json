@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "weather_data_products",
+  "info": {
+    "singularName": "weather-data-product",
+    "pluralName": "weather-data-products",
+    "displayName": "Weather Data Product"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}
