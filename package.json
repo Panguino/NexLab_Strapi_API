@@ -13,6 +13,7 @@
     "kill": "npx kill-port 3000"
   },
   "dependencies": {
+    "@ckeditor/strapi-plugin-ckeditor": "^1.1.1",
     "@strapi/plugin-cloud": "^5.14.0",
     "@strapi/plugin-graphql": "^5.14.0",
     "@strapi/plugin-users-permissions": "^5.14.0",
