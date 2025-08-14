@@ -39,4 +39,33 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  ckeditor: {
+    enabled: true,
+    config: {
+      plugin: {
+        // disable data-theme tag setting //
+        theme: {
+          // optional - defaults to 'default'
+          common: [
+            {
+              name: "theme_common",
+              theme: "light",
+              editorConfig: {
+                // optional - defaults to {}
+                // CKEditor 5 configuration
+              },
+            },
+          ],
+        },
+        field: {
+          // optional - defaults to {}
+          // CKEditor 5 configuration for fields
+          styles: {
+            // optional - defaults to {}
+            // Inline styles for the editor
+          },
+        },
+      },
+    },
+  },
 });
