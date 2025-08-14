@@ -24,6 +24,10 @@
         "images",
         "files"
       ]
+    },
+    "details": {
+      "type": "customField",
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }

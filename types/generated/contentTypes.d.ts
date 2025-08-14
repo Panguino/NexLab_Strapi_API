@@ -846,6 +846,8 @@ export interface ApiWeatherDataProductWeatherDataProduct
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Blocks;
+    details: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<'plugin::ckeditor.CKEditor'>;
     image: Schema.Attribute.Media<'images' | 'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
