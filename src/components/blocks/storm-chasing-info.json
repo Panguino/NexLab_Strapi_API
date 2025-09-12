@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_blocks_storm_chasing_infos",
+  "info": {
+    "displayName": "Storm Chasing Info",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

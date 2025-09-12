@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_classes_overviews",
+  "info": {
+    "displayName": "Classes Overview",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "classes_overview": {
+      "type": "component",
+      "component": "list.classes-overview",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

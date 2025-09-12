@@ -13,6 +13,19 @@ export interface BlocksAnimatorBackgroundHero extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksClassesOverview extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_classes_overviews';
+  info: {
+    displayName: 'Classes Overview';
+    icon: 'bulletList';
+  };
+  attributes: {
+    classes_overview: Schema.Attribute.Component<'list.classes-overview', true>;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksDegree extends Struct.ComponentSchema {
   collectionName: 'components_blocks_degrees';
   info: {
@@ -91,11 +104,34 @@ export interface BlocksRichText extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksSimpleCta extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_simple_ctas';
+  info: {
+    displayName: 'SimpleCTA';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'list.buttons', false>;
+    intro_text: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<'plugin::ckeditor.CKEditor'>;
+  };
+}
+
 export interface BlocksStaff extends Struct.ComponentSchema {
   collectionName: 'components_blocks_staff';
   info: {
     displayName: 'Staff';
     icon: 'apps';
+  };
+  attributes: {
+    Name: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksStormChasingInfo extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_storm_chasing_infos';
+  info: {
+    displayName: 'Storm Chasing Info';
+    icon: 'bulletList';
   };
   attributes: {
     Name: Schema.Attribute.String;
@@ -159,6 +195,32 @@ export interface ListButtons extends Struct.ComponentSchema {
     Style: Schema.Attribute.Enumeration<['solid', 'outline']> &
       Schema.Attribute.DefaultTo<'solid'>;
     target: Schema.Attribute.Enumeration<['_self', '_blank']>;
+  };
+}
+
+export interface ListClassInfo extends Struct.ComponentSchema {
+  collectionName: 'components_list_class_infos';
+  info: {
+    displayName: 'Class Info';
+    icon: 'bulletList';
+  };
+  attributes: {
+    blue_text: Schema.Attribute.String;
+    class_description: Schema.Attribute.Text;
+    class_name: Schema.Attribute.String;
+  };
+}
+
+export interface ListClassesOverview extends Struct.ComponentSchema {
+  collectionName: 'components_list_classes_overviews';
+  info: {
+    displayName: 'Classes Overview';
+    icon: 'apps';
+  };
+  attributes: {
+    class_info: Schema.Attribute.Component<'list.class-info', true>;
+    intro_text: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<'plugin::ckeditor.CKEditor'>;
   };
 }
 
@@ -344,17 +406,22 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'blocks.animator-background-hero': BlocksAnimatorBackgroundHero;
+      'blocks.classes-overview': BlocksClassesOverview;
       'blocks.degree': BlocksDegree;
       'blocks.feature-panels': BlocksFeaturePanels;
       'blocks.gallery': BlocksGallery;
       'blocks.info-with-cloud-image': BlocksInfoWithCloudImage;
       'blocks.page-heading': BlocksPageHeading;
       'blocks.rich-text': BlocksRichText;
+      'blocks.simple-cta': BlocksSimpleCta;
       'blocks.staff': BlocksStaff;
+      'blocks.storm-chasing-info': BlocksStormChasingInfo;
       'blocks.storm-chasing-schedule': BlocksStormChasingSchedule;
       'blocks.two-panel-icon-info': BlocksTwoPanelIconInfo;
       'blocks.video': BlocksVideo;
       'list.buttons': ListButtons;
+      'list.class-info': ListClassInfo;
+      'list.classes-overview': ListClassesOverview;
       'list.feature-panel': ListFeaturePanel;
       'list.footer-links': ListFooterLinks;
       'list.group': ListGroup;

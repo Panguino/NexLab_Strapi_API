@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_blocks_simple_ctas",
+  "info": {
+    "displayName": "SimpleCTA"
+  },
+  "options": {},
+  "attributes": {
+    "intro_text": {
+      "type": "customField",
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "button": {
+      "type": "component",
+      "component": "list.buttons",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

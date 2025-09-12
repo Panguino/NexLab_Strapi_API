@@ -740,6 +740,9 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.gallery',
         'blocks.feature-panels',
         'blocks.animator-background-hero',
+        'blocks.classes-overview',
+        'blocks.simple-cta',
+        'blocks.storm-chasing-info',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
