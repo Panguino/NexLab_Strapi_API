@@ -738,6 +738,8 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.video',
         'blocks.staff',
         'blocks.gallery',
+        'blocks.feature-panels',
+        'blocks.animator-background-hero',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

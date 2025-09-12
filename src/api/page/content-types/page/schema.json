@@ -17,8 +17,8 @@
     },
     "SEO": {
       "type": "component",
-      "repeatable": false,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "repeatable": false
     },
     "path": {
       "type": "string"
@@ -42,7 +42,9 @@
         "blocks.rich-text",
         "blocks.video",
         "blocks.staff",
-        "blocks.gallery"
+        "blocks.gallery",
+        "blocks.feature-panels",
+        "blocks.animator-background-hero"
       ]
     },
     "productInfo": {

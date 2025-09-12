@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_blocks_animator_background_heroes",
+  "info": {
+    "displayName": "Animator Background Hero",
+    "icon": "sun"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "customField",
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "buttons": {
+      "type": "component",
+      "component": "list.buttons",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_blocks_feature_panels",
+  "info": {
+    "displayName": "Feature Panels",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "feature_panel": {
+      "type": "component",
+      "component": "list.feature-panel",
+      "repeatable": true
+    },
+    "buttons": {
+      "type": "component",
+      "component": "list.buttons",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

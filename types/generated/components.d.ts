@@ -1,5 +1,18 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlocksAnimatorBackgroundHero extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_animator_background_heroes';
+  info: {
+    displayName: 'Animator Background Hero';
+    icon: 'sun';
+  };
+  attributes: {
+    buttons: Schema.Attribute.Component<'list.buttons', true>;
+    Text: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<'plugin::ckeditor.CKEditor'>;
+  };
+}
+
 export interface BlocksDegree extends Struct.ComponentSchema {
   collectionName: 'components_blocks_degrees';
   info: {
@@ -8,6 +21,20 @@ export interface BlocksDegree extends Struct.ComponentSchema {
   };
   attributes: {
     degrees: Schema.Attribute.Relation<'oneToMany', 'api::degree.degree'>;
+  };
+}
+
+export interface BlocksFeaturePanels extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_feature_panels';
+  info: {
+    displayName: 'Feature Panels';
+    icon: 'apps';
+  };
+  attributes: {
+    buttons: Schema.Attribute.Component<'list.buttons', true>;
+    description: Schema.Attribute.Text;
+    feature_panel: Schema.Attribute.Component<'list.feature-panel', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -132,6 +159,22 @@ export interface ListButtons extends Struct.ComponentSchema {
     Style: Schema.Attribute.Enumeration<['solid', 'outline']> &
       Schema.Attribute.DefaultTo<'solid'>;
     target: Schema.Attribute.Enumeration<['_self', '_blank']>;
+  };
+}
+
+export interface ListFeaturePanel extends Struct.ComponentSchema {
+  collectionName: 'components_list_feature_panels';
+  info: {
+    displayName: 'Feature Panel';
+    icon: 'picture';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    href: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    link_text: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -300,7 +343,9 @@ export interface SharedSeo extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blocks.animator-background-hero': BlocksAnimatorBackgroundHero;
       'blocks.degree': BlocksDegree;
+      'blocks.feature-panels': BlocksFeaturePanels;
       'blocks.gallery': BlocksGallery;
       'blocks.info-with-cloud-image': BlocksInfoWithCloudImage;
       'blocks.page-heading': BlocksPageHeading;
@@ -310,6 +355,7 @@ declare module '@strapi/strapi' {
       'blocks.two-panel-icon-info': BlocksTwoPanelIconInfo;
       'blocks.video': BlocksVideo;
       'list.buttons': ListButtons;
+      'list.feature-panel': ListFeaturePanel;
       'list.footer-links': ListFooterLinks;
       'list.group': ListGroup;
       'list.material-group': ListMaterialGroup;
