@@ -44,6 +44,17 @@ export interface BlocksDegree extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksFaqs extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_faqs';
+  info: {
+    displayName: 'Faqs';
+    icon: 'lightbulb';
+  };
+  attributes: {
+    faq_tags: Schema.Attribute.Relation<'oneToMany', 'api::faq-tag.faq-tag'>;
+  };
+}
+
 export interface BlocksFeatureData extends Struct.ComponentSchema {
   collectionName: 'components_blocks_feature_data';
   info: {
@@ -481,6 +492,7 @@ declare module '@strapi/strapi' {
       'blocks.animator-background-hero': BlocksAnimatorBackgroundHero;
       'blocks.classes-overview': BlocksClassesOverview;
       'blocks.degree': BlocksDegree;
+      'blocks.faqs': BlocksFaqs;
       'blocks.feature-data': BlocksFeatureData;
       'blocks.feature-panels': BlocksFeaturePanels;
       'blocks.gallery': BlocksGallery;

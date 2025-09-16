@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blocks_faqs",
+  "info": {
+    "displayName": "Faqs",
+    "icon": "lightbulb"
+  },
+  "options": {},
+  "attributes": {
+    "faq_tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq-tag.faq-tag"
+    }
+  },
+  "config": {}
+}

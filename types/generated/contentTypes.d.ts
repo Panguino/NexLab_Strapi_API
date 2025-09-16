@@ -774,6 +774,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.storm-chasing-info',
         'blocks.image',
         'blocks.feature-data',
+        'blocks.faqs',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
