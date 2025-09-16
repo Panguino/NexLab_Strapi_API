@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_list_data_info_panels",
+  "info": {
+    "displayName": "Data Info Panel",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "background": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "main_button": {
+      "type": "component",
+      "component": "list.buttons",
+      "repeatable": false
+    },
+    "buttons_title": {
+      "type": "string"
+    },
+    "buttons": {
+      "type": "component",
+      "component": "list.buttons",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

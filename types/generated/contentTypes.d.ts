@@ -650,6 +650,35 @@ export interface ApiFaqOverviewFaqOverview extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiFaqTagFaqTag extends Struct.CollectionTypeSchema {
+  collectionName: 'faq_tags';
+  info: {
+    displayName: 'FAQ Tag';
+    pluralName: 'faq-tags';
+    singularName: 'faq-tag';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqs: Schema.Attribute.Relation<'manyToMany', 'api::faq.faq'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-tag.faq-tag'
+    > &
+      Schema.Attribute.Private;
+    Name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
@@ -666,7 +695,7 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    keywords: Schema.Attribute.String;
+    faq_tags: Schema.Attribute.Relation<'manyToMany', 'api::faq-tag.faq-tag'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'> &
       Schema.Attribute.Private;
@@ -743,6 +772,8 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.classes-overview',
         'blocks.simple-cta',
         'blocks.storm-chasing-info',
+        'blocks.image',
+        'blocks.feature-data',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1408,6 +1439,7 @@ declare module '@strapi/strapi' {
       'api::course.course': ApiCourseCourse;
       'api::degree.degree': ApiDegreeDegree;
       'api::faq-overview.faq-overview': ApiFaqOverviewFaqOverview;
+      'api::faq-tag.faq-tag': ApiFaqTagFaqTag;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::page.page': ApiPagePage;

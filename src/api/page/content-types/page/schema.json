@@ -47,7 +47,9 @@
         "blocks.animator-background-hero",
         "blocks.classes-overview",
         "blocks.simple-cta",
-        "blocks.storm-chasing-info"
+        "blocks.storm-chasing-info",
+        "blocks.image",
+        "blocks.feature-data"
       ]
     },
     "productInfo": {

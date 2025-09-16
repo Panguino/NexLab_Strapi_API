@@ -18,8 +18,11 @@
     "Answer": {
       "type": "blocks"
     },
-    "keywords": {
-      "type": "string"
+    "faq_tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::faq-tag.faq-tag",
+      "inversedBy": "faqs"
     }
   }
 }

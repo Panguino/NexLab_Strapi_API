@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_blocks_feature_data",
+  "info": {
+    "displayName": "Feature Data",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "intro_text": {
+      "type": "customField",
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "data_info_panels": {
+      "type": "component",
+      "component": "list.data-info-panel",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

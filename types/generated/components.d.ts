@@ -44,6 +44,19 @@ export interface BlocksDegree extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksFeatureData extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_feature_data';
+  info: {
+    displayName: 'Feature Data';
+    icon: 'bulletList';
+  };
+  attributes: {
+    data_info_panels: Schema.Attribute.Component<'list.data-info-panel', true>;
+    intro_text: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<'plugin::ckeditor.CKEditor'>;
+  };
+}
+
 export interface BlocksFeaturePanels extends Struct.ComponentSchema {
   collectionName: 'components_blocks_feature_panels';
   info: {
@@ -66,6 +79,18 @@ export interface BlocksGallery extends Struct.ComponentSchema {
   };
   attributes: {
     Name: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksImage extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_images';
+  info: {
+    displayName: 'Image';
+    icon: 'picture';
+  };
+  attributes: {
+    Image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -117,16 +142,11 @@ export interface BlocksSimpleCta extends Struct.ComponentSchema {
     displayName: 'SimpleCTA';
   };
   attributes: {
-    button: Schema.Attribute.Component<'list.buttons', false>;
+    background: Schema.Attribute.Media<'images' | 'files'>;
+    background_full: Schema.Attribute.Boolean;
+    button: Schema.Attribute.Component<'list.buttons', true>;
     intro_text: Schema.Attribute.RichText &
-      Schema.Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
-        {
-          licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3ODE5MTM1OTksImp0aSI6IjAwNzQ3NzFlLTljMTEtNDZiMC04MDNkLWQ0NDc4Y2RlZjI1NiIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCIsIkUyUCIsIkUyVyJdLCJ2YyI6ImU2YWIwMzhhIn0.GpIsNENbfZ9D4_CL1Go1xs7h8ycVnXq-rrQLj3c-h4do2kxO5s3S7PfPSn0J2Yg-01PmRsSmyuFPUCB4zakwAQ';
-          output: 'HTML';
-          preset: 'rich';
-        }
-      >;
+      Schema.Attribute.CustomField<'plugin::ckeditor.CKEditor'>;
   };
 }
 
@@ -242,6 +262,24 @@ export interface ListClassesOverview extends Struct.ComponentSchema {
           preset: 'rich';
         }
       >;
+  };
+}
+
+export interface ListDataInfoPanel extends Struct.ComponentSchema {
+  collectionName: 'components_list_data_info_panels';
+  info: {
+    displayName: 'Data Info Panel';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    background: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    buttons: Schema.Attribute.Component<'list.buttons', true>;
+    buttons_title: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    main_button: Schema.Attribute.Component<'list.buttons', false>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -429,8 +467,10 @@ declare module '@strapi/strapi' {
       'blocks.animator-background-hero': BlocksAnimatorBackgroundHero;
       'blocks.classes-overview': BlocksClassesOverview;
       'blocks.degree': BlocksDegree;
+      'blocks.feature-data': BlocksFeatureData;
       'blocks.feature-panels': BlocksFeaturePanels;
       'blocks.gallery': BlocksGallery;
+      'blocks.image': BlocksImage;
       'blocks.info-with-cloud-image': BlocksInfoWithCloudImage;
       'blocks.page-heading': BlocksPageHeading;
       'blocks.rich-text': BlocksRichText;
@@ -443,6 +483,7 @@ declare module '@strapi/strapi' {
       'list.buttons': ListButtons;
       'list.class-info': ListClassInfo;
       'list.classes-overview': ListClassesOverview;
+      'list.data-info-panel': ListDataInfoPanel;
       'list.feature-panel': ListFeaturePanel;
       'list.footer-links': ListFooterLinks;
       'list.group': ListGroup;
