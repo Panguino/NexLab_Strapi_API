@@ -51,7 +51,17 @@ export interface BlocksFaqs extends Struct.ComponentSchema {
     icon: 'lightbulb';
   };
   attributes: {
+    buttons: Schema.Attribute.Component<'list.buttons', true>;
     faq_tags: Schema.Attribute.Relation<'oneToMany', 'api::faq-tag.faq-tag'>;
+    intro_text: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3ODE5MTM1OTksImp0aSI6IjAwNzQ3NzFlLTljMTEtNDZiMC04MDNkLWQ0NDc4Y2RlZjI1NiIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCIsIkUyUCIsIkUyVyJdLCJ2YyI6ImU2YWIwMzhhIn0.GpIsNENbfZ9D4_CL1Go1xs7h8ycVnXq-rrQLj3c-h4do2kxO5s3S7PfPSn0J2Yg-01PmRsSmyuFPUCB4zakwAQ';
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
   };
 }
 
