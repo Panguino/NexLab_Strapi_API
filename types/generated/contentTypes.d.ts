@@ -775,6 +775,8 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.image',
         'blocks.feature-data',
         'blocks.faqs',
+        'blocks.testimonials',
+        'blocks.two-column-rich-text',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

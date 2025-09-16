@@ -212,6 +212,47 @@ export interface BlocksStormChasingSchedule extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksTestimonials extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_testimonials';
+  info: {
+    displayName: 'Testimonials';
+    icon: 'quote';
+  };
+  attributes: {
+    testimonials: Schema.Attribute.Component<'list.testimonial', true>;
+  };
+}
+
+export interface BlocksTwoColumnRichText extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_two_column_rich_texts';
+  info: {
+    displayName: 'Two Column Rich Text';
+    icon: 'pencil';
+  };
+  attributes: {
+    left_buttons: Schema.Attribute.Component<'list.buttons', true>;
+    left_text: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3ODE5MTM1OTksImp0aSI6IjAwNzQ3NzFlLTljMTEtNDZiMC04MDNkLWQ0NDc4Y2RlZjI1NiIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCIsIkUyUCIsIkUyVyJdLCJ2YyI6ImU2YWIwMzhhIn0.GpIsNENbfZ9D4_CL1Go1xs7h8ycVnXq-rrQLj3c-h4do2kxO5s3S7PfPSn0J2Yg-01PmRsSmyuFPUCB4zakwAQ';
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    right_buttons: Schema.Attribute.Component<'list.buttons', true>;
+    right_text: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3ODE5MTM1OTksImp0aSI6IjAwNzQ3NzFlLTljMTEtNDZiMC04MDNkLWQ0NDc4Y2RlZjI1NiIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCIsIkUyUCIsIkUyVyJdLCJ2YyI6ImU2YWIwMzhhIn0.GpIsNENbfZ9D4_CL1Go1xs7h8ycVnXq-rrQLj3c-h4do2kxO5s3S7PfPSn0J2Yg-01PmRsSmyuFPUCB4zakwAQ';
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+  };
+}
+
 export interface BlocksTwoPanelIconInfo extends Struct.ComponentSchema {
   collectionName: 'components_blocks_two_panel_icon_infos';
   info: {
@@ -420,6 +461,20 @@ export interface ListSchools extends Struct.ComponentSchema {
   };
 }
 
+export interface ListTestimonial extends Struct.ComponentSchema {
+  collectionName: 'components_list_testimonials';
+  info: {
+    displayName: 'Testimonial';
+    icon: 'quote';
+  };
+  attributes: {
+    author: Schema.Attribute.String;
+    author_title: Schema.Attribute.String;
+    avatar: Schema.Attribute.Media<'images' | 'files'>;
+    Quote: Schema.Attribute.Text;
+  };
+}
+
 export interface ListTrips extends Struct.ComponentSchema {
   collectionName: 'components_list_trips';
   info: {
@@ -504,6 +559,8 @@ declare module '@strapi/strapi' {
       'blocks.staff': BlocksStaff;
       'blocks.storm-chasing-info': BlocksStormChasingInfo;
       'blocks.storm-chasing-schedule': BlocksStormChasingSchedule;
+      'blocks.testimonials': BlocksTestimonials;
+      'blocks.two-column-rich-text': BlocksTwoColumnRichText;
       'blocks.two-panel-icon-info': BlocksTwoPanelIconInfo;
       'blocks.video': BlocksVideo;
       'list.buttons': ListButtons;
@@ -518,6 +575,7 @@ declare module '@strapi/strapi' {
       'list.panel-icon-info': ListPanelIconInfo;
       'list.school-links': ListSchoolLinks;
       'list.schools': ListSchools;
+      'list.testimonial': ListTestimonial;
       'list.trips': ListTrips;
       'shared.meta-social': SharedMetaSocial;
       'shared.seo': SharedSeo;
