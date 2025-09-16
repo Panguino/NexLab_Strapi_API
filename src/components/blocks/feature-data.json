@@ -9,6 +9,7 @@
     "intro_text": {
       "type": "customField",
       "customField": "plugin::ckeditor.CKEditor",
+      "displayName": "Intro Text",
       "options": {
         "output": "HTML",
         "preset": "rich",
