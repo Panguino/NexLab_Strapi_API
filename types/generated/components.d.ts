@@ -117,8 +117,7 @@ export interface BlocksImage extends Struct.ComponentSchema {
     icon: 'picture';
   };
   attributes: {
-    Image: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
+    Image: Schema.Attribute.Media<'images' | 'files'>;
   };
 }
 
@@ -368,8 +367,7 @@ export interface ListFeaturePanel extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     href: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files'>;
     link_text: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
