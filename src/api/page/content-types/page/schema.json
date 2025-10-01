@@ -17,8 +17,8 @@
     },
     "SEO": {
       "type": "component",
-      "repeatable": false,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "repeatable": false
     },
     "path": {
       "type": "string"
@@ -39,18 +39,32 @@
         "blocks.two-panel-icon-info",
         "blocks.storm-chasing-schedule",
         "blocks.degree",
-        "blocks.rich-text"
+        "blocks.rich-text",
+        "blocks.video",
+        "blocks.staff",
+        "blocks.gallery",
+        "blocks.feature-panels",
+        "blocks.animator-background-hero",
+        "blocks.classes-overview",
+        "blocks.simple-cta",
+        "blocks.storm-chasing-info",
+        "blocks.image",
+        "blocks.feature-data",
+        "blocks.faqs",
+        "blocks.testimonials",
+        "blocks.two-column-rich-text"
       ]
     },
     "productInfo": {
       "type": "blocks"
     },
     "ProductImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "productDescription": {
       "type": "blocks"

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_blocks_feature_data",
+  "info": {
+    "displayName": "Feature Data",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "intro_text": {
+      "type": "customField",
+      "customField": "plugin::ckeditor.CKEditor",
+      "displayName": "Intro Text",
+      "options": {
+        "output": "HTML",
+        "preset": "rich",
+        "licenseKey": "eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3ODE5MTM1OTksImp0aSI6IjAwNzQ3NzFlLTljMTEtNDZiMC04MDNkLWQ0NDc4Y2RlZjI1NiIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCIsIkUyUCIsIkUyVyJdLCJ2YyI6ImU2YWIwMzhhIn0.GpIsNENbfZ9D4_CL1Go1xs7h8ycVnXq-rrQLj3c-h4do2kxO5s3S7PfPSn0J2Yg-01PmRsSmyuFPUCB4zakwAQ"
+      }
+    },
+    "data_info_panels": {
+      "type": "component",
+      "component": "list.data-info-panel",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

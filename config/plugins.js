@@ -30,7 +30,7 @@ module.exports = ({ env }) => ({
     config: {
       endpoint: "/graphql",
       shadowCRUD: true,
-      playgroundAlways: env('NODE_ENV') !== 'production',
+      landingPage: true,
       depthLimit: 15,
       amountLimit: 100,
       apolloServer: {
@@ -39,11 +39,33 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  seo: {
+  ckeditor: {
     enabled: true,
-  },
-  'import-export-entries': {
-    enabled: true,
-    config: {},
+    config: {
+      plugin: {
+        // disable data-theme tag setting //
+        theme: {
+          // optional - defaults to 'default'
+          common: [
+            {
+              name: "theme_common",
+              theme: "light",
+              editorConfig: {
+                // optional - defaults to {}
+                // CKEditor 5 configuration
+              },
+            },
+          ],
+        },
+        field: {
+          // optional - defaults to {}
+          // CKEditor 5 configuration for fields
+          styles: {
+            // optional - defaults to {}
+            // Inline styles for the editor
+          },
+        },
+      },
+    },
   },
 });

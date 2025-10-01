@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_list_testimonials",
+  "info": {
+    "displayName": "Testimonial",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "author": {
+      "type": "string"
+    },
+    "author_title": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "Quote": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

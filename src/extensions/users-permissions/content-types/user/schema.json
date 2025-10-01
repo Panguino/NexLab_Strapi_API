@@ -11,6 +11,7 @@
   "options": {
     "draftAndPublish": false
   },
+  "pluginOptions": {},
   "attributes": {
     "username": {
       "type": "string",
@@ -67,6 +68,54 @@
     },
     "TestInfo": {
       "type": "string"
+    },
+    "discordId": {
+      "type": "string"
+    },
+    "discordUsername": {
+      "type": "string"
+    },
+    "discordConnectedAt": {
+      "type": "datetime"
+    },
+    "discordAvatar": {
+      "type": "string"
+    },
+    "donationTier": {
+      "type": "enumeration",
+      "enum": [
+        "None",
+        "Standard",
+        "Advanced",
+        "Premium",
+        "Sponsor"
+      ]
+    },
+    "donationAmount": {
+      "type": "integer"
+    },
+    "donationFrequency": {
+      "type": "enumeration",
+      "enum": [
+        "n/a",
+        "monthly",
+        "lifetime"
+      ]
+    },
+    "donationStatus": {
+      "type": "enumeration",
+      "enum": [
+        "inactive",
+        "active",
+        "cancelled",
+        "expired"
+      ]
+    },
+    "sponsorStatus": {
+      "type": "boolean"
+    },
+    "donationUpdatedAt": {
+      "type": "datetime"
     }
   }
 }
